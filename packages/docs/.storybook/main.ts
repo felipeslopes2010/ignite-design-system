@@ -14,13 +14,6 @@ const config: StorybookConfig = {
     '../src/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
   addons: [
-    {
-      name: getAbsolutePath('@storybook/addon-docs'),
-      options: {
-        mdxPluginOptions: {},
-        transcludeMarkdown: true,
-      },
-    },
     getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@chromatic-com/storybook'),
   ],
