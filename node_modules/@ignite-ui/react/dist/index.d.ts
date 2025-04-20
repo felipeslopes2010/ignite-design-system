@@ -1,6 +1,9 @@
 import * as _stitches_react_types_styled_component from '@stitches/react/types/styled-component';
 import * as _stitches_react_types_css_util from '@stitches/react/types/css-util';
+import * as react from 'react';
 import { ComponentProps, ElementType } from 'react';
+import * as react_jsx_runtime from 'react/jsx-runtime';
+import * as Avatar$1 from '@radix-ui/react-avatar';
 
 declare const Box: _stitches_react_types_styled_component.StyledComponent<"div", {}, {}, _stitches_react_types_css_util.CSS<{}, {
     colors: {
@@ -624,4 +627,10 @@ interface HeadingProps extends ComponentProps<typeof Heading> {
     as?: ElementType;
 }
 
-export { Box, type BoxProps, Heading, type HeadingProps, Text, type TextProps };
+declare const AvatarImage: _stitches_react_types_styled_component.StyledComponent<react.ForwardRefExoticComponent<Avatar$1.AvatarImageProps & react.RefAttributes<HTMLImageElement>>, {}, {}, _stitches_react_types_css_util.CSS<{}, {}, {}, {}>>;
+
+interface AvatarProps extends ComponentProps<typeof AvatarImage> {
+}
+declare function Avatar(props: AvatarProps): react_jsx_runtime.JSX.Element;
+
+export { Avatar, type AvatarProps, Box, type BoxProps, Heading, type HeadingProps, Text, type TextProps };
