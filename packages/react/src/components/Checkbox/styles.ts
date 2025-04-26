@@ -43,7 +43,7 @@ const slideOut = keyframes({
   },
 })
 
-export const CheckboxIndicator = styled(Checkbox.CheckboxIndicator, {
+export const CheckboxIndicator = styled(Checkbox.Indicator, {
   color: '$white',
   width: '$4',
   height: '$4',
