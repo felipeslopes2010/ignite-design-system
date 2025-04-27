@@ -26,6 +26,41 @@ jobs:
 
       - name: Deploy storybook
         working-directory: ./packages/docs
-        run: touch storybook-static/.nojekyll && npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
+        run: |
+          touch storybook-static/.nojekyll
+          npm run deploy-storybook
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+name: Deploy docs
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Deploy storybook
+        working-directory: ./packages/docs
+        run: |
+          touch storybook-static/.nojekyll
+          npm run deploy-storybook
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
