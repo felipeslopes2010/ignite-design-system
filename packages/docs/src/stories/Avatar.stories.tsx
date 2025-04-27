@@ -9,6 +9,13 @@ export default {
         src: 'https://github.com/felipeslopes2010.png',
         alt: 'Felipe Kimura'
     },
+    argTypes: {
+        src: {
+            control: {
+                type: 'text',
+            }
+        }
+    }
 } as Meta<AvatarProps>
 
 export const Primary: StoryObj<AvatarProps> = {}
