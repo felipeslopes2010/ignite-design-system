@@ -6,7 +6,7 @@ on:
       - master
 
 permissions:
-  contents: write 
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -24,13 +24,8 @@ jobs:
 
       - run: npm run build
 
-      - name: Set up Git user
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-      
       - name: Deploy storybook
         working-directory: ./packages/docs
         run: npm run deploy-storybook --existing-output-dir=storybook-static
         env:
-          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

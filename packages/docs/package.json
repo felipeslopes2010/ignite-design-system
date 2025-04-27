@@ -8,7 +8,7 @@
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
     "build-storybook": "storybook build -o storybook-static",
-    "deploy-storybook": "gh-pages -d storybook-static -b gh-pages"
+    "deploy-storybook": "GH_TOKEN=${{ secrets.GITHUB_TOKEN }} gh-pages -d storybook-static -b gh-pages"
   },
   "dependencies": {
     "@ignite-ui/eslint-config": "*",
