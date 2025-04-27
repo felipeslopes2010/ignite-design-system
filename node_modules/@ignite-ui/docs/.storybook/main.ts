@@ -23,11 +23,13 @@ const config: StorybookConfig = {
     options: {},
   },
   viteFinal: async (config, { configType }) => {
-    if(configType === 'PRODUCTION') {
-      config.base = '/ignite-design-system/'
+    if (configType === 'PRODUCTION') {
+      config.base = '/ignite-design-system/';
+      config.build = config.build || {};
+      config.build.outDir = 'storybook-static';
     }
-
-      return config
+    
+    return config;
   }
 };
 
