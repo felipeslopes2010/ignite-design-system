@@ -1,6 +1,6 @@
 {
   "name": "@ignite-ui/tokens",
-  "version": "1.0.0",
+  "version": "3.1.0",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -19,5 +19,8 @@
     "@ignite-ui/eslint-config": "*",
     "tsup": "^8.4.0",
     "typescript": "^5.8.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
